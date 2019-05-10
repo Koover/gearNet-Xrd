@@ -9,7 +9,6 @@ import javafx.scene.shape.StrokeType
 import javafx.scene.text.FontPosture
 import javafx.scene.text.FontWeight
 import tornadofx.*
-import tornadofx.Stylesheet.Companion.box
 import java.net.URI
 
 class MainStyle : Stylesheet() {
@@ -59,7 +58,8 @@ class MainStyle : Stylesheet() {
         }
 
         playerStatsSection {
-            minWidth = 150.px
+//            minWidth = 150.px
+            minWidth = 50.px
             padding = box(0.px)
             alignment = Pos.CENTER_RIGHT
         }
