@@ -6,6 +6,7 @@ import getSession
 import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.geometry.Rectangle2D
+import javafx.stage.StageStyle
 import tornadofx.*
 import kotlin.random.Random
 
@@ -48,6 +49,15 @@ class MainView : View() {
                     label("LOBBY_MAX_LENGTH") { addClass(MainStyle.lobbyName) }
                 }
             }
+
+            hbox{
+                button("press me"){
+                    action{
+                        PlayerView().openWindow()
+                    }
+                }
+            }
+
             hbox {
                 alignment = Pos.CENTER
 
@@ -166,4 +176,9 @@ class PlayerView : View() {
             }
         }
     }
+
+    class MyFragment: Fragment(){
+        override val root = label("this is a popup")
+    }
+
 }
