@@ -4,16 +4,12 @@ import azUtils.getRes
 import javafx.geometry.Insets
 import javafx.geometry.Pos
 import javafx.geometry.Rectangle2D
-<<<<<<< HEAD
-import javafx.stage.StageStyle
-=======
 import javafx.scene.control.Label
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import session.Player
 import session.Session
->>>>>>> 6b0cd618605f31f699c4b8061bede565e32393fc
 import tornadofx.*
 
 class MainView : View() {
@@ -31,7 +27,7 @@ class MainView : View() {
         delay(2048); cycleDatabase() } }
 
     private fun cycleMemScan() { GlobalScope.launch {
-//        matchesPlayedLabel.text = "Matches:  ${session.totalMatchesPlayed}"
+        //        matchesPlayedLabel.text = "Matches:  ${session.totalMatchesPlayed}"
 //        playersActiveLabel.text = "Players:  ${session.getActivePlayerCount()} / ${session.players.size}"
         modulesGui[0].reset(session.xrdApi.isConnected())
         if (session.xrdApi.isConnected() && session.updatePlayers()) redrawAppUi()
@@ -80,20 +76,6 @@ class MainView : View() {
                 }
 
             }
-<<<<<<< HEAD
-
-            hbox{
-                button("press me"){
-                    action{
-                        PlayerView().openWindow()
-                    }
-                }
-            }
-
-            hbox {
-                alignment = Pos.CENTER
-=======
->>>>>>> 6b0cd618605f31f699c4b8061bede565e32393fc
 
             // ======== BOTTOM UTILS ========
             hbox { alignment = Pos.BOTTOM_CENTER
@@ -139,50 +121,3 @@ class MainView : View() {
 
 }
 
-<<<<<<< HEAD
-class PlayerView : View() {
-    override val root: Form = form {
-        hbox {
-            // PLAYER VIEW
-            addClass(MainStyle.playerContainer)
-            imageview("${pathHome.toUri().toURL()}src/main/resources/gn_atlas.png") {
-                setPreserveRatio(true)
-                setViewport(Rectangle2D(0.0, 0.0, 64.0, 64.0))
-                setPrefSize(64.0, 64.0)
-            }
-            vbox {
-                addClass(MainStyle.playerScoreSection)
-                label("EL GRANDE TEJAS HANDLE") { addClass(MainStyle.playerHandle) }
-                label("2,876,050 W$") { addClass(MainStyle.playerBounty) }
-            }
-            vbox {
-                addClass(MainStyle.playerStatsSection)
-                hbox {
-                    progressbar {
-                        minWidth = 120.0
-                        maxHeight = 16.0
-                    }
-                }
-                hbox {
-                    vbox {
-                        label("Rating: A") { addClass(MainStyle.playerRating) }
-                        label("Chains: 8") { addClass(MainStyle.playerChains) }
-                    }
-                    vbox {
-                        label("Wins: 80") { addClass(MainStyle.playerRating) }
-                        label("Games: 160") { addClass(MainStyle.playerChains) }
-                    }
-                }
-            }
-        }
-    }
-
-    class MyFragment: Fragment(){
-        override val root = label("this is a popup")
-    }
-
-}
-=======
-
-
->>>>>>> 6b0cd618605f31f699c4b8061bede565e32393fc
